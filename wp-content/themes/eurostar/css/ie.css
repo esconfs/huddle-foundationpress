@@ -1,0 +1,14 @@
+/* IE (all versions) */
+/* Boilerplate makes it easy to target different versions of IE, such as:
+html.ie6 { text-align: center; }
+html.ie6 body { text-align: left; }
+*/
+
+
+#resources_list li .resource_type {font-size:14px; line-height:16px;}
+input {line-height:45px;}
+#sidebar li.widget_events table.fullcalendar tbody tr td ul {z-index:400; position:relative;}
+
+a#logo {background:url('../images/logo_header.jpg') no-repeat center center;}
+a#footer_logo {background:url('../images/logo_footer.jpg') no-repeat center center;}
+#sidebar li.widget_events_addto #add_to_calendar {line-height:14px;}

@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Header section   Green = #adc05d Grey = #566472 aqua = #59c4bf
+   ========================================================================== */
+ .outer {
+    float: left;
+    width: 100%;
+    clear: both;
+    display: block;
+} 
+
+.outer-slider{
+    clear: both;
+    display: block;
+    float: none;
+    padding: 6px 0 0 0;
+    width: 100%;
+    max-height: 300px;
+    overflow:hidden;
+} 
+.inner {
+    float: none;
+    width: 960px;
+    margin: 0 auto;
+    clear: both;
+    display: block;
+}
+/* Top Section */   
+.top-content h1{
+	background: #adc05d none repeat scroll 0 0;
+    color: white;
+    font-size: 20px;    
+    padding: 5px 10px;
+}
+
+ header #header_top {
+    background: #293a36;
+}
+#header_top_inner  #top_menu  .menu_header  ul#menu-top-menu {
+    float: left;
+    clear: both;
+}
+#header_top_inner #top_menu .menu_header ul#menu-top-menu {
+    float: left;
+    list-style: none;
+    margin: 0;
+    height: 29px;
+    padding: 13px 0 0;
+}
+#header_top_inner #top_menu .menu_header ul#menu-top-menu li {
+    float: left;
+    border-right: 1px solid #DBC499;
+    padding: 0 20px;
+    line-height: 10px;
+}
+#header_top_inner #top_menu .menu_header ul#menu-top-menu li a {
+    color: #FFF;
+    font-size: 12px;
+}
+/* Logo Banner and Nav Sections */  
+
+header #header_bottom #header_bottom_inner, #header_bottom_extra_inner {
+    position: relative;
+}
+.headertop_ad {
+    display: block;
+    float: right;
+    max-width: 730px;
+    max-height: 85px;
+    margin: 2px 0 0 0;
+}
+.headertop_ad img {
+    max-width: 100%;
+    height: auto;
+    max-height:78px;
+}
+
+.left{float: left;}
+.right{float: right;}
+.top-content{display: table;}
+.top-content .left{display: table-column; min-height: 160px; width: 60%;}
+.top-content .right{display: table-column;}
+
+/* Update in Main.css when Migration applied*/
+.outer #main_menu #menu-main-menu > li > .sub-menu{top:74px;}
+.outer  #main_menu.with_ad #menu-main-menu > li > .sub-menu{top:45px;}
+.inner #top_buttons li.btn_register{ background: #566472;}
+.inner #top_buttons li.btn_login { background: #adc05d;}
+#header_bottom_inner a#logo{width: 260px; height: 64px;    margin-top: 10px;} 
+	.outer #main_menu #menu-main-menu > li:first-child:hover, #main_menu #menu-main-menu > li:first-child > .sub-menu > li > a:hover {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:nth-child(2):hover, #main_menu #menu-main-menu > li:nth-child(2) > .sub-menu > li > a:hover, #main_menu #menu-main-menu > li:nth-child(2) > .sub-menu > li.current-menu-item a {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:nth-child(3):hover, #main_menu #menu-main-menu > li:nth-child(3) > .sub-menu > li > a:hover, #main_menu #menu-main-menu > li:nth-child(3) > .sub-menu > li.current-menu-item a {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:nth-child(4):hover, #main_menu #menu-main-menu > li:nth-child(4) > .sub-menu > li > a:hover, #main_menu #menu-main-menu > li:nth-child(4) > .sub-menu > li.current-menu-item a {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:nth-child(5):hover, #main_menu #menu-main-menu > li:nth-child(5) > .sub-menu > li > a:hover, #main_menu #menu-main-menu > li:nth-child(5) > .sub-menu > li.current-menu-item a {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:nth-child(6):hover, #main_menu #menu-main-menu > li:nth-child(6) > .sub-menu > li > a:hover, #main_menu #menu-main-menu > li:nth-child(6) > .sub-menu > li.current-menu-item a {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:nth-child(7):hover, #main_menu #menu-main-menu > li:nth-child(7) > .sub-menu > li > a:hover, #main_menu #menu-main-menu > li:nth-child(7) > .sub-menu > li.current-menu-item a {background:#adc05d; color:#FFFFFF;}
+	.outer #main_menu #menu-main-menu > li:last-child{background: #F78D1E;}
+	.outer #main_menu #menu-main-menu > li:last-child a{color:#FFFFFF;}	
+	.outer #main_menu #menu-main-menu > li:last-child:hover{background:#59B0C4}	
+	.outer #main_menu #menu-main-menu > li:first-child.current-menu-item > a, .outer #main_menu #menu-main-menu > li:first-child.current-page-ancestor > a{    border-bottom: 7px solid #adc05d;    color: #adc05d;}
+
+#main_menu.with_ad #menu-main-menu{float: left; width: 100%; display: table;}
+#main_menu.with_ad #menu-main-menu > li {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+    height: 40px;
+}
+#main_menu.with_ad #menu-main-menu > li > a {
+    padding: 12px 0;
+    height: 45px;
+}
+
+/* Header Layout */
+header #header_top{background:#293a36}
+header #header_bottom{background:#FFF; border-bottom: 1px solid rgba(209,209,209,1);}
+header #header_bottom #header_bottom_inner,#header_bottom_extra_inner{position:relative}
+header #header_bottom_extra{border-bottom: 1px solid rgba(209,209,209,1)}
+
+/* twitter Section */
+a.twitter-timeline {
+  /* Buttonish */
+  display: inline-block;
+  padding: 6px 12px 6px 30px;
+  margin: 10px 0;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNzIgNzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDcyIDcyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxyZWN0IHg9IjAiIGZpbGw9Im5vbmUiIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIvPg0KPHBhdGggZmlsbD0iIzU1YWNlZSIgZD0iTTY4LjgxMiwxNS4xNDFjLTIuMzQ4LDEuMDM5LTQuODY5LDEuNzQzLTcuNTE5LDIuMDZjMi43MDMtMS42Miw0Ljc3OC00LjE4Nyw1Ljc1Ni03LjI0NGMtMi41MjksMS41LTUuMzMsMi41OTItOC4zMTMsMy4xNzYNCglDNTYuMzQ5LDEwLjU5MSw1Mi45NDgsOSw0OS4xODIsOWMtNy4yMjksMC0xMy4wOTIsNS44NjEtMTMuMDkyLDEzLjA5M2MwLDEuMDI2LDAuMTE4LDIuMDIxLDAuMzM4LDIuOTgxDQoJYy0xMC44ODUtMC41NDgtMjAuNTI4LTUuNzU3LTI2Ljk4Ny0xMy42NzljLTEuMTI2LDEuOTM2LTEuNzcxLDQuMTg0LTEuNzcxLDYuNTgxYzAsNC41NDIsMi4zMTIsOC41NTEsNS44MjQsMTAuODk4DQoJYy0yLjE0Ni0wLjA2OS00LjE2NS0wLjY1Ny01LjkzLTEuNjM4Yy0wLjAwMiwwLjA1NS0wLjAwMiwwLjExLTAuMDAyLDAuMTYyYzAsNi4zNDUsNC41MTMsMTEuNjM4LDEwLjUwNCwxMi44NA0KCWMtMS4xMDEsMC4yOTgtMi4yNTYsMC40NTctMy40NDksMC40NTdjLTAuODQ2LDAtMS42NjctMC4wNzgtMi40NjUtMC4yMzFjMS42NjcsNS4yLDYuNDk5LDguOTg2LDEyLjIzLDkuMDkNCgljLTQuNDgyLDMuNTEyLTEwLjEyOSw1LjYwNi0xNi4yNiw1LjYwNmMtMS4wNTUsMC0yLjA5Ni0wLjA2MS0zLjEyMi0wLjE4NGM1Ljc5NCwzLjcxNywxMi42NzYsNS44ODIsMjAuMDY3LDUuODgyDQoJYzI0LjA4MywwLDM3LjI1MS0xOS45NDksMzcuMjUxLTM3LjI0OWMwLTAuNTY2LTAuMDE0LTEuMTM0LTAuMDM5LTEuNjk0QzY0LjgzOCwyMC4wNjgsNjcuMDU4LDE3Ljc2NSw2OC44MTIsMTUuMTQxeiIvPg0KPC9zdmc+DQo=") 8px 8px no-repeat;
+  background-size: 1em 1em;
+ 
+  /* Text */
+  font: normal 12px/18px Helvetica, Arial, sans-serif;
+  color: #333;
+  white-space: nowrap;
+}
+ 
+a.twitter-timeline:hover,
+a.twitter-timeline:focus {
+  background-color: #dedede;
+}
+ 
+/* Color Highlight for keyboard navigation */
+ 
+a.twitter-timeline:focus {
+  outline: none;
+  border-color: #0089cb;
+}

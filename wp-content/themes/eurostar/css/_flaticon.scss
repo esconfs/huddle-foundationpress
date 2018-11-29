@@ -1,0 +1,207 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 04/01/2017 13:34
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-agenda:before { content: "\f100"; }
+.flaticon-animals:before { content: "\f101"; }
+.flaticon-back:before { content: "\f102"; }
+.flaticon-bars-graphic-on-tablet-screen:before { content: "\f103"; }
+.flaticon-binary-data-search-symbol:before { content: "\f104"; }
+.flaticon-book:before { content: "\f105"; }
+.flaticon-book-1:before { content: "\f106"; }
+.flaticon-business:before { content: "\f107"; }
+.flaticon-business-1:before { content: "\f108"; }
+.flaticon-business-2:before { content: "\f109"; }
+.flaticon-chat-speech-bubbles-outline:before { content: "\f10a"; }
+.flaticon-check:before { content: "\f10b"; }
+.flaticon-cinema:before { content: "\f10c"; }
+.flaticon-circle:before { content: "\f10d"; }
+.flaticon-cloud-download-interface-symbol:before { content: "\f10e"; }
+.flaticon-cocktail:before { content: "\f10f"; }
+.flaticon-commerce:before { content: "\f110"; }
+.flaticon-computer:before { content: "\f111"; }
+.flaticon-connection:before { content: "\f112"; }
+.flaticon-data:before { content: "\f113"; }
+.flaticon-data-analysis-symbol:before { content: "\f114"; }
+.flaticon-data-flow:before { content: "\f115"; }
+.flaticon-dates:before { content: "\f116"; }
+.flaticon-delete:before { content: "\f117"; }
+.flaticon-diamond:before { content: "\f118"; }
+.flaticon-document:before { content: "\f119"; }
+.flaticon-double-speech-bubble-symbol-of-oval-shape:before { content: "\f11a"; }
+.flaticon-down-arrow:before { content: "\f11b"; }
+.flaticon-drink:before { content: "\f11c"; }
+.flaticon-education:before { content: "\f11d"; }
+.flaticon-elegant-tuxedo:before { content: "\f11e"; }
+.flaticon-facebook:before { content: "\f11f"; }
+.flaticon-graphic:before { content: "\f120"; }
+.flaticon-graphic-1:before { content: "\f121"; }
+.flaticon-hotel:before { content: "\f122"; }
+.flaticon-icon-2144:before { content: "\f123"; }
+.flaticon-information-button:before { content: "\f124"; }
+.flaticon-interface:before { content: "\f125"; }
+.flaticon-linkedin-logo:before { content: "\f126"; }
+.flaticon-medical:before { content: "\f127"; }
+.flaticon-music:before { content: "\f128"; }
+.flaticon-next:before { content: "\f129"; }
+.flaticon-old-typical-phone:before { content: "\f12a"; }
+.flaticon-people:before { content: "\f12b"; }
+.flaticon-people-1:before { content: "\f12c"; }
+.flaticon-people-2:before { content: "\f12d"; }
+.flaticon-people-3:before { content: "\f12e"; }
+.flaticon-people-4:before { content: "\f12f"; }
+.flaticon-person:before { content: "\f130"; }
+.flaticon-phone-receiver:before { content: "\f131"; }
+.flaticon-placeholder:before { content: "\f132"; }
+.flaticon-placeholder-1:before { content: "\f133"; }
+.flaticon-play-button:before { content: "\f134"; }
+.flaticon-podcast:before { content: "\f135"; }
+.flaticon-podcast-circular-button:before { content: "\f136"; }
+.flaticon-search-analytics:before { content: "\f137"; }
+.flaticon-secure-database:before { content: "\f138"; }
+.flaticon-sign:before { content: "\f139"; }
+.flaticon-smartphone:before { content: "\f13a"; }
+.flaticon-social:before { content: "\f13b"; }
+.flaticon-sports:before { content: "\f13c"; }
+.flaticon-square:before { content: "\f13d"; }
+.flaticon-square-1:before { content: "\f13e"; }
+.flaticon-star:before { content: "\f13f"; }
+.flaticon-symbol:before { content: "\f140"; }
+.flaticon-symbol-1:before { content: "\f141"; }
+.flaticon-tag:before { content: "\f142"; }
+.flaticon-technology:before { content: "\f143"; }
+.flaticon-tester:before { content: "\f144"; }
+.flaticon-ticket:before { content: "\f145"; }
+.flaticon-time:before { content: "\f146"; }
+.flaticon-tool:before { content: "\f147"; }
+.flaticon-tool-1:before { content: "\f148"; }
+.flaticon-trophy:before { content: "\f149"; }
+.flaticon-twitter-logo:before { content: "\f14a"; }
+.flaticon-up-arrow:before { content: "\f14b"; }
+.flaticon-updated-security-for-protection-on-internet:before { content: "\f14c"; }
+.flaticon-upload-information:before { content: "\f14d"; }
+.flaticon-user-location:before { content: "\f14e"; }
+.flaticon-vip-pass:before { content: "\f14f"; }
+.flaticon-woman-blacksmith:before { content: "\f150"; }
+.flaticon-working-tools:before { content: "\f151"; }
+.flaticon-youtube-1:before { content: "\f152"; }
+.flaticon-youtube-logo:before { content: "\f153"; }
+    
+    $font-Flaticon-agenda: "\f100";
+    $font-Flaticon-animals: "\f101";
+    $font-Flaticon-back: "\f102";
+    $font-Flaticon-bars-graphic-on-tablet-screen: "\f103";
+    $font-Flaticon-binary-data-search-symbol: "\f104";
+    $font-Flaticon-book: "\f105";
+    $font-Flaticon-book-1: "\f106";
+    $font-Flaticon-business: "\f107";
+    $font-Flaticon-business-1: "\f108";
+    $font-Flaticon-business-2: "\f109";
+    $font-Flaticon-chat-speech-bubbles-outline: "\f10a";
+    $font-Flaticon-check: "\f10b";
+    $font-Flaticon-cinema: "\f10c";
+    $font-Flaticon-circle: "\f10d";
+    $font-Flaticon-cloud-download-interface-symbol: "\f10e";
+    $font-Flaticon-cocktail: "\f10f";
+    $font-Flaticon-commerce: "\f110";
+    $font-Flaticon-computer: "\f111";
+    $font-Flaticon-connection: "\f112";
+    $font-Flaticon-data: "\f113";
+    $font-Flaticon-data-analysis-symbol: "\f114";
+    $font-Flaticon-data-flow: "\f115";
+    $font-Flaticon-dates: "\f116";
+    $font-Flaticon-delete: "\f117";
+    $font-Flaticon-diamond: "\f118";
+    $font-Flaticon-document: "\f119";
+    $font-Flaticon-double-speech-bubble-symbol-of-oval-shape: "\f11a";
+    $font-Flaticon-down-arrow: "\f11b";
+    $font-Flaticon-drink: "\f11c";
+    $font-Flaticon-education: "\f11d";
+    $font-Flaticon-elegant-tuxedo: "\f11e";
+    $font-Flaticon-facebook: "\f11f";
+    $font-Flaticon-graphic: "\f120";
+    $font-Flaticon-graphic-1: "\f121";
+    $font-Flaticon-hotel: "\f122";
+    $font-Flaticon-icon-2144: "\f123";
+    $font-Flaticon-information-button: "\f124";
+    $font-Flaticon-interface: "\f125";
+    $font-Flaticon-linkedin-logo: "\f126";
+    $font-Flaticon-medical: "\f127";
+    $font-Flaticon-music: "\f128";
+    $font-Flaticon-next: "\f129";
+    $font-Flaticon-old-typical-phone: "\f12a";
+    $font-Flaticon-people: "\f12b";
+    $font-Flaticon-people-1: "\f12c";
+    $font-Flaticon-people-2: "\f12d";
+    $font-Flaticon-people-3: "\f12e";
+    $font-Flaticon-people-4: "\f12f";
+    $font-Flaticon-person: "\f130";
+    $font-Flaticon-phone-receiver: "\f131";
+    $font-Flaticon-placeholder: "\f132";
+    $font-Flaticon-placeholder-1: "\f133";
+    $font-Flaticon-play-button: "\f134";
+    $font-Flaticon-podcast: "\f135";
+    $font-Flaticon-podcast-circular-button: "\f136";
+    $font-Flaticon-search-analytics: "\f137";
+    $font-Flaticon-secure-database: "\f138";
+    $font-Flaticon-sign: "\f139";
+    $font-Flaticon-smartphone: "\f13a";
+    $font-Flaticon-social: "\f13b";
+    $font-Flaticon-sports: "\f13c";
+    $font-Flaticon-square: "\f13d";
+    $font-Flaticon-square-1: "\f13e";
+    $font-Flaticon-star: "\f13f";
+    $font-Flaticon-symbol: "\f140";
+    $font-Flaticon-symbol-1: "\f141";
+    $font-Flaticon-tag: "\f142";
+    $font-Flaticon-technology: "\f143";
+    $font-Flaticon-tester: "\f144";
+    $font-Flaticon-ticket: "\f145";
+    $font-Flaticon-time: "\f146";
+    $font-Flaticon-tool: "\f147";
+    $font-Flaticon-tool-1: "\f148";
+    $font-Flaticon-trophy: "\f149";
+    $font-Flaticon-twitter-logo: "\f14a";
+    $font-Flaticon-up-arrow: "\f14b";
+    $font-Flaticon-updated-security-for-protection-on-internet: "\f14c";
+    $font-Flaticon-upload-information: "\f14d";
+    $font-Flaticon-user-location: "\f14e";
+    $font-Flaticon-vip-pass: "\f14f";
+    $font-Flaticon-woman-blacksmith: "\f150";
+    $font-Flaticon-working-tools: "\f151";
+    $font-Flaticon-youtube-1: "\f152";
+    $font-Flaticon-youtube-logo: "\f153";

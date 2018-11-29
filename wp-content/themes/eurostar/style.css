@@ -1,0 +1,348 @@
+/*
+	Theme Name: Huddle/Eurostar
+	Description: 
+	Author: Ebow
+	Author URI: http://ebow.ie/
+	Version: 1.0
+	Tags: custom-menu, editor-style, theme-options, threaded-comments, sticky-post, microformats, rtl-language-support, translation-ready
+*/
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {display: block;}
+audio, canvas, video { display: inline-block; *display: inline;*zoom: 1;}
+audio:not([controls]) {display: none; height: 0;}
+[hidden] {display: none;}
+html {font-size: 100%; /* 1 */ -webkit-text-size-adjust: 100%; /* 2 */ -ms-text-size-adjust: 100%; /* 2 */}
+body { margin: 0;}
+a:focus {outline: thin dotted;}
+a:active, a:hover {outline: 0;}
+abbr[title] { border-bottom: 1px dotted;}
+b, strong {font-weight: bold;}
+blockquote { margin: 0px;}
+dfn {font-style: italic;}
+mark {background: #ff0; color: #000;}
+p, pre {margin: 10px 0;}
+code, kbd, pre, samp {font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em;}
+pre{
+    background: #f3f3f7 none repeat scroll 0 0;
+    border: 1px solid #dedee3;
+    font-size: 12px;
+    line-height: 1.3em;
+    margin-bottom: 22px;
+    overflow: auto;
+    padding: 11px;
+    direction: ltr;
+}
+pre {white-space: pre; white-space: pre-wrap; word-wrap: break-word;}
+q {quotes: none;}
+q:before, q:after {content: ''; content: none;}
+small {font-size: 80%;}
+sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+dl, menu, ol, ul {margin: 0;}
+dd {margin: 0;}
+menu, ol, ul {padding: 0;}
+nav ul, nav ol {list-style: none; list-style-image: none;}
+img { border: 0; -ms-interpolation-mode: bicubic; }
+svg:not(:root) { overflow: hidden;}
+figure {margin: 0;}
+form {margin: 0;}
+fieldset {border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em;}
+legend { border: 0; /* 1 */ padding: 0; white-space: normal; /* 2 */ *margin-left: -7px; /* 3 */}
+button, input, select, textarea {font-size: 100%; /* 1 */ margin: 0; /* 2 */ vertical-align: baseline; /* 3 */ *vertical-align: middle; /* 3 */}
+button, input { line-height: normal;}
+button, html input[type="button"], /* 1 */ input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ *overflow: visible;  /* 4 */}
+button[disabled], input[disabled] { cursor: default;}
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ *height: 13px; /* 3 */ *width: 13px; /* 3 */}
+input[type="search"] {-webkit-appearance: textfield; /* 1 */ }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}
+button::-moz-focus-inner, input::-moz-focus-inner {border: 0; padding: 0;}
+textarea {overflow: auto; /* 1 */ vertical-align: top; /* 2 */}
+table {border-collapse: collapse; border-spacing: 0;}
+
+
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html, button, input, select, textarea {color: #222;}
+body {font-size: 14px; line-height: 1.4;}
+::-moz-selection {background: #b3d4fc; text-shadow: none;}
+::selection {background: #b3d4fc; text-shadow: none;}
+hr {display: block;height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+img { vertical-align: middle;}
+fieldset { border: 0; margin: 0; padding: 0;}
+textarea {resize: vertical;}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.ir {background-color: transparent; border: 0; overflow: hidden;  /* IE 6/7 fallback */ *text-indent: -9999px;}
+.ir:before { content: ""; display: block; width: 0; height: 100%;}
+.hidden { display: none !important; visibility: hidden;}
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px;}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto;}
+.invisible { visibility: hidden;}
+.clearfix:before, .clearfix:after { content: " "; /* 1 */ display: table; /* 2 */}
+.clearfix:after { clear: both;}
+.clearfix { *zoom: 1; clear:both;}
+.page-template-page-resource-new .the_content .page_item a{padding: 14px 12%;}
+
+/* ==========================================================================
+   Print styles.
+   ========================================================================== */
+
+@media print {
+    * {background: transparent !important; color: #000 !important; /* Black prints faster: h5bp.com/s */ box-shadow:none !important; text-shadow: none !important;}
+    a,  a:visited { text-decoration: underline; }
+    a[href]:after { content: " (" attr(href) ")";}
+    abbr[title]:after {content: " (" attr(title) ")";}
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: "";}
+    pre, blockquote {border: 1px solid #999; page-break-inside: avoid;}
+    thead {display: table-header-group; /* h5bp.com/t */}
+    tr, img {page-break-inside: avoid;}
+    img {max-width: 100% !important;}
+    @page {margin: 0.5cm;}
+    p, h2, h3 { orphans: 3; widows: 3;}
+    h2, h3 {page-break-after: avoid;}
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.aligncenter { display:block; margin:0 auto }
+.alignleft { float:left }
+.alignright { float:right }
+.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px }
+li#theme-switcher { background:#fff; border:10px solid red; padding:20px; position:fixed; top:0; right:0 } /* Use this if you have the Theme Switcher Reloaded plugin (http://themebot.com/webmaster-tools/1-wordpress-theme-switcher-reloaded) installed and want to make it nice and obvious */
+.alert { background:red; color:white } /* 'alert' has a basic style, since it's useful to have it standing out for testing purposes.
+/** START WordPress-Defined CSS Classes **/
+.wp-caption-text{}
+.gallery-caption{}
+.bypostauthor{}
+.sticky{}
+/** Keep drop-downs working **/
+#access li {float: left;position: relative;}
+#access ul ul {display: none;	float: left;	position: absolute;top: 3.333em;left: 0;	z-index: 99999;}
+#access ul ul ul {left: 100%;	top: 0;}
+#access ul li:hover > ul {display: block;}
+.wwwp_login {background: lightyellow;  display: inline-block;  padding: 0 20px;  border: 1px solid orange; margin-bottom: 20px; font-size: .8em;}
+/** END WordPress-Defined CSS Classes **/
+
+/* ==========================================================================
+   Tabs
+   ========================================================================== */
+
+.header-list{font-size:12px;}
+.header-list li:nth-child(1) { padding: 0 10px;  width: 16%;}
+.header-list li:nth-child(2){padding: 0 10px;width: 270px;}
+.header-list li:nth-child(3){width: 70px;}
+.header-list li:nth-child(5){ text-align: right; width: 100px;}
+/*.home-page #bbpress-forums li.forum_right .forum_title a{color: #333333 !important;}*/
+.home-page #tab-2 #bbpress-forums li.forum_right .forum_title a{color: #333333 !important;}
+
+.group-forum-topic #content_wrapper #content #content_left{width: 100%;}
+.group-forum-topic #content_wrapper #content #content_right{display: none;}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+ #tab-1 ul.header-list, #tab-2 ul.header-list{float:right; padding-right:20px;}
+ .header-list li:nth-child(5){width:80px;}
+}
+#tab-1 ul.header-list{display:block; padding-top: 8px; width: 100%;}
+#tab-1 ul.super-sticky{display:none;}
+#tab-1 ul.sticky{display:none;}
+#tab-2 ul.header-list{display:block; padding-top: 8px;}
+#tab-2 ul ul{display:none;}
+#tab-2 ul.super-sticky{display:block;}
+#tab-2 ul.sticky{display:block;}
+#tabs .bbp-pagination{display:none}	
+#tabs {  
+  float: none;
+  list-style: none;
+  position: relative;
+  margin: 15px 0 0 10px;
+  text-align: left;
+}
+#tabs li {
+    border-right: 1px solid white;
+    display: block;
+    float: left;
+}
+
+#tabs ul.nav li a {
+    background: #adc05d none repeat scroll 0 0;
+    border-radius: 2px 2px 0 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 14px 21px;
+    position: relative;
+    top: 4px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+#tabs ul.nav li a:hover {
+  background: #59c4bf;
+}
+#tabs div.tab {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #c4c4c4;
+    display: none;
+    font-size: 14px;
+    left: 0;
+    line-height: 18px;    
+    overflow-y: hidden;
+    padding: 0;
+    margin-right: 5px;
+    /*position: absolute;*/
+    top: 53px;
+    width: 99%;
+    z-index: 2;
+}
+#tabs ul li.active a{
+  top: 0;
+  padding-top: 17px;
+  background: #566472;
+}
+
+#bbpress-forums li.forum_right .forum_desc li{font-weight: 400;}
+.home-page #bbpress-forums li.forum_right .forum_desc li:last-child a{padding-left: 10px;}
+
+#tabs p.link a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 5px;
+  background-color: #f9f9f9;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+#tabs  p.link a:hover {
+  background-color: #522764;
+}	
+
+#tabs  #bbpress-forums li.forum_right, #tabs #bbpress-forums li.forum_right .forum_desc{
+	display: flex;
+}
+#tabs  #bbpress-forums li.forum_right .forum_desc_text{
+	display: none;
+}
+#tabs #bbpress-forums li.forum_right{
+	min-height: 35px;
+    width: 100%;
+}
+
+#tabs #bbpress-forums li.forum_right .forum_desc li:nth-child(-n+1){
+	display: none;
+}
+#tabs #bbpress-forums li.forum_right .forum_desc li:nth-child(n+1) a{
+	display:block;
+	text-indent:0;
+}
+#tabs #bbpress-forums li.forum_right .forum_desc li:nth-child(2){
+text-indent: -50px; 
+}
+#tabs #bbpress-forums li.forum_right .forum_desc li:nth-child(2) span{margin-left: 50px;}
+
+
+#tabs #bbpress-forums li.forum_right .forum_desc li:nth-child(3){
+	width: 150px;
+}
+#tabs #bbpress-forums li.forum_right .forum_desc li:nth-child(4){width: 100px;}
+
+#tabs #bbpress-forums li.forum_right .forum_desc li {
+    display: flex;
+    margin-right: 0;
+    overflow: hidden;
+    padding-left: 2px;
+    text-indent: -99px;
+}
+#tabs #bbpress-forums li.forum_right .forum_desc{width: 250px;} 
+#tabs #bbpress-forums li.forum_right .forum_title{background:none; display: inline-table; margin:0 10px 0 0; padding:0 0 8px 0;width: 245px;}
+#tabs #bbpress-forums li.forum_right .forum_title a{font-size: 13px;}
+.home-page #bbpress-forums li.bbp-body ul.forum, .home-page #bbpress-forums li.bbp-body ul.topic{padding:6px 1px 4px 8px; float: left; width:98%;}
+#bbpress-forums li.forum_right .forum_desc{font-size: 12px !important;}
+#tabs #bbpress-forums li.bbp-body ul.forum, {padding: 10px 5px;}
+
+/* Groups Tab Section */
+#tab-3 #groups-list li{overflow: hidden;
+    padding: 15px;
+    list-style: none;
+    border-bottom: 1px solid #EAEAEA;
+    margin: 0;
+        width: 100%;}
+    
+#tab-3  .item-avatar{display: inline;
+    float: left;
+    position: relative; 
+    padding: 0 20px 0 0;}
+#tab-3  .item{    display: inline; position: relative; height: 75px;}
+#tab-3  .item-title{display: inline;}
+#tab-3  .item-meta{display: none; float:right; font-size:12px; color:grey;}
+#tab-3  .item-desc, #tab-3  .item-desc p{display: inline;}
+#tab-3  .action{width: 100%; display: block; text-align: right;  margin-top: 10px;}
+#tab-3 .action .group-button { display: inline; margin: 0 20px 0 0; background: #adc05d ; padding: 6px; color: white;}
+#tab-3 .action .meta{ display: inline;}
+#tab-3  .pagination{ padding: 5px 20px; font-size: 12px; border-bottom: 1px solid #eee;}
+/* Main .CSS */
+.home-page #bbpress-forums li.forum_left{width:50px;}
+.home-page .author_img_wrapper img {  height: 40px;  overflow: hidden;  width: 40px; }
+.home-page .author_img_wrapper, .user_nicename  {width:40px; height:40px; }
+.home-page .author_img_wrapper .author_img_cover {background:rgba(0, 0, 0, 0.1); width:40px; height:40px; }
+.home-page #bbpress-forums li.forum_right .forum_title a{line-height: 20px;}
+.home-page #bbpress-forums .bbp-topics-front ul.super-sticky, .home-page #bbpress-forums .bbp-topics ul.super-sticky, .home-page #bbpress-forums .bbp-topics ul.sticky, .home-page #bbpress-forums .bbp-forum-content ul.sticky{border-bottom: 1px solid #ccc;}
+.wwwp_bbp_container{display:block; float:left; width:100%;}
+.wwwp_bbp_item{display: inline;    width: 38%;    position: relative;    float: inherit;    margin-right: 20px;    margin-bottom: 20px;}
+
+/* ==========================================================================
+   Translate
+   ========================================================================== */
+  	
+/* Style The Dropdown Button */
+.dropbtn {   background: #ff6b00;    color: white;    padding: 8px 12px;    font-size: 14px;    border: none;    cursor: pointer;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {    position: relative;    display: inline-block;    float:right;    margin:0px 0px 10px 20px;}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {    display: none;    position: absolute;    background-color: #f9f9f9;    min-width: 200px;    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);    z-index: 99999;    left: -100px;}
+
+/* Links inside the dropdown */
+#bbpress-forums div.bbp-reply-content .dropdown-content a {color: black; padding: 4px; text-decoration: none; display: inline-block; width: 96px; overflow: hidden; height: 30px; padding-left: 10px;}
+
+/* Change color of dropdown links on hover */
+#bbpress-forums div.bbp-reply-content .dropdown-content a:hover {color:#4CAF50; background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content { display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}	
+.translation-completed{margin: 20px 0; border-bottom: solid 1px #4CAF50; padding-bottom: 20px;}
+.bbp-reply-wrapper .bbp-reply-content .ms-translated-original, .bbp-reply-wrapper .bbp-reply-content .ms-translated-original p{color:#aaa;}
+#bbpress-forums ul.bbp-lead-topic, #bbpress-forums ul.bbp-topics, #bbpress-forums ul.bbp-forums, #bbpress-forums ul.bbp-replies, #bbpress-forums ul.bbp-search-results{overflow:visible !important;}
+
+div.bbp-forum-header, div.bbp-topic-header, div.bbp-reply-header, li.bbp-body div.hentry{overflow:visible !important;}	
+.yuzo_related_post .relatedthumb a{ color: #000;}
+
+	.gform_wrapper .top_label select.medium{  padding: 6px 0; margin-bottom: 15px; }
+	.gform_wrapper select{     padding: 6px 0; margin-bottom: 15px;}
+	
+
