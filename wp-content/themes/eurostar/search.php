@@ -20,15 +20,15 @@ get_header(); ?>
 					<?php the_breadcrumb(); ?>
 				<?php } ?>
 				<?php if ( have_posts() ) : ?>
-				<h3 class="search_result_title">Your search for <?php $allsearch = &new WP_Query("s=$s&showposts=-1"); $key = wp_specialchars($s, 1); $count = $allsearch->post_count; _e(''); _e('<span class="search-terms">&#91;'); echo $key; _e('&#93;</span> returned '); _e(' <span> '); echo $count . ' '; _e('</span> results'); wp_reset_query(); ?></h3>
-				
+				<h3 class="search_result_title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+
 				<h3 class="search_result_filter_text">FILTER RESULTS</h3>
 				<ul class="search_result_filter custom_checkbox">
 					<li>
 						<input type="checkbox" data-type="forum" value=".forum" class="css-checkbox forums" id="checkbox_klaus" checked="checked">
 						<label for="checkbox_klaus" name="checkbox_klaus_lbl" class="css-label" data-filter="forums">Forums</label>
 					</li>
-					<!-- 
+					<!--
 <li>
 						<input type="checkbox" data-type="resource" value=".resource" class="css-checkbox resources" id="checkbox_klaus2" checked="checked">
 						<label for="checkbox_klaus2" name="checkbox_klaus_lbl2" class="css-label" data-filter="resources">Resources</label>
@@ -46,7 +46,7 @@ get_header(); ?>
 							$tag_link = get_tag_link( $tag->term_id );
 							$tag_name = $tag->name;
 							$tag_slug = $tag->slug;
-							
+
 							$html .= '<li><input type="checkbox" data-type="' . $tag_slug .'" value=".tag-' . $tag_slug .'" class="css-checkbox tags-filter ' . $tag_slug .'" id="checkbox_klaus' . $t . '" checked="checked">';
 							$html .= '<label for="checkbox_klaus' . $t . '" name="checkbox_klaus_lbl' . $t . '" class="css-label" data-filter=".tag-' . $tag_slug . ' ">' . $tag_name . '</label></li>';
 							$t++;
@@ -55,7 +55,7 @@ get_header(); ?>
 						echo $html;
 					?>
 				</ul>
-				
+
 				<div id="search_list">
 				<?php
 				/* Run the loop for the search to output the results.
@@ -65,7 +65,7 @@ get_header(); ?>
 				 get_template_part( 'loop', 'search' );
 				?>
 				</div>
-				
+
 				<?php else : ?>
 									<h2><?php _e( 'Nothing Found', 'boilerplate' ); ?></h2>
 									<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'boilerplate' ); ?></p>
