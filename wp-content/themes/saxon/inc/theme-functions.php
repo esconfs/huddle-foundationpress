@@ -1315,3 +1315,110 @@ function saxon_likes_javascript() {
 }
 add_action('print_footer_scripts', 'saxon_likes_javascript', 99);
 endif;
+
+/* Custom Post Types */
+function codex_custom_init() {
+
+  $labels = array(
+    'name' => _x('Resources', 'post type general name'),
+    'singular_name' => _x('Resource', 'post type singular name'),
+    'add_new' => _x('Add New', 'Resource'),
+    'add_new_item' => __('Add New Resource'),
+    'edit_item' => __('Edit Resource'),
+    'new_item' => __('New Resource'),
+    'all_items' => __('All Resources'),
+    'view_item' => __('View Resources'),
+    'search_items' => __('Search Resources'),
+    'not_found' =>  __('No Resource found'),
+    'not_found_in_trash' => __('No Resource found in Trash'),
+    'parent_item_colon' => '',
+    'menu_name' => __('Resources')
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'query_var' => true,
+    'rewrite' => array('slug'=>'resources', 'with_front' => TRUE), // ##### USED IN CONJUCTION WITH custom-post-type-permalinks PLUGIN #####S
+    //'rewrite' => array('slug'=>'resource'),
+    'exclude_from_search' => false,
+    'capability_type' => 'resource',
+    'taxonomies' => array('resource_type', 'post_tag'),
+    'map_meta_cap'    => true,
+    'has_archive' => false,
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array( 'title', 'thumbnail', 'editor', 'comments', 'author')
+  );
+  register_post_type('resource',$args);
+  flush_rewrite_rules();
+}
+add_action( 'init', 'codex_custom_init' );
+
+
+/* Custom Taxonomy */
+$labels = array(
+        'name' => _x( 'Resources Types', 'taxonomy general name' ),
+        'singular_name' => _x( 'Resources Type', 'taxonomy singular name' ),
+        'search_items' =>  __( 'SearchResources Types' ),
+        'all_items' => __( 'All Resources Types' ),
+        'parent_item' => __( 'Parent Resources Type' ),
+        'parent_item_colon' => __( 'Parent Resources Type:' ),
+        'edit_item' => __( 'Edit Resources Types' ),
+        'update_item' => __( 'Update Resources Type' ),
+        'add_new_item' => __( 'Add New Resources Type' ),
+        'new_item_name' => __( 'New Resources Type Name' )
+);
+
+$settings = array(
+        'hierarchical' => true,
+        'capability_type' => 'resource_type',
+        'labels' => $labels,
+        'capabilities' => array('assign_terms'=>'edit_resources','manage_terms' => 'manage_resource_types','edit_terms' => 'manage_resource_types','delete_terms' => 'manage_resource_types'),
+        'show_ui' => true,
+        'rewrite' => true,
+        'query_var' => true
+);
+register_taxonomy('resource_type', array('resource'), $settings);
+
+/* Admin Capabilities */
+function add_resource_caps() {
+$role = get_role( 'administrator' );
+
+$role->add_cap( 'edit_resource' );
+$role->add_cap( 'edit_resources' );
+$role->add_cap( 'edit_others_resources' );
+$role->add_cap( 'delete_others_resources' );
+$role->add_cap( 'delete_published_resources' );
+$role->add_cap( 'publish_resources' );
+$role->add_cap( 'read_resource' );
+$role->add_cap( 'read_private_resources' );
+$role->add_cap( 'delete_private_resources' );
+$role->add_cap( 'delete_resource' );
+$role->add_cap( 'delete_resources' );
+$role->add_cap( 'manage_resource_types' );
+$role->add_cap( 'delete_resource_types' );
+$role->add_cap( 'edit_resource_types' );
+}
+add_action( 'admin_init', 'add_resource_caps');
+
+/* Media Uploads Restricktion */
+add_filter( 'posts_where', 'devplus_attachments_wpquery_where' );
+function devplus_attachments_wpquery_where( $where ){
+	global $current_user;
+
+	if( is_user_logged_in() ){
+		if ($current_user->user_level != 10 ) {
+			// we spreken over een ingelogde user
+			if( isset( $_POST['action'] ) ){
+				// library query
+				if( $_POST['action'] == 'query-attachments' ){
+					$where .= ' AND post_author='.$current_user->data->ID;
+				}
+			}
+		}
+	}
+	return $where;
+}
