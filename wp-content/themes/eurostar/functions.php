@@ -80,7 +80,7 @@ function add_events_button() {
 	$custom_current_userID = $current_user->ID;
 	$custom_current_user = bp_core_get_username($custom_current_userID);
 	$event_button = '<li id="events-personal-li-extra"><a id="user-create-events" href="' . home_url() . '/members/' . $custom_current_user . '/events/my-events/edit/?action=edit">&#43;Add New Event</a></li>';
-	echo $event_button;	
+	echo $event_button;
 }
 add_filter('bp_member_options_nav', 'add_events_button');
 
@@ -111,11 +111,11 @@ function redirect_non_admin_users() {
 /* Is Page or Child of it */
 function tree(){
   $class = '';
-  if( is_page() ) { 
+  if( is_page() ) {
   global $post;
       /* Get an array of Ancestors and Parents if they exist */
   $parents = get_post_ancestors( $post->ID );
-      /* Get the top Level page->ID count base 1, array base 0 so -1 */ 
+      /* Get the top Level page->ID count base 1, array base 0 so -1 */
   $id = ($parents) ? $parents[count($parents)-1]: $post->ID;
      /* Get the parent and set the $class with the page slug (post_name) */
   $parent = get_page( $id );
@@ -159,8 +159,8 @@ function setPostViews($postID) {
 }
 
 //Resources Navigation Short Code
-function wpb_list_child_pages() { 
-	global $post; 
+function wpb_list_child_pages() {
+	global $post;
 	if ( is_page() && $post->post_parent )
 		$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
 	else
@@ -183,25 +183,25 @@ function my_pre_save_post( $post_id )
     // Create a new post
     $resource_type = $_POST['fields']['field_52a09c27846f9'];
     $resource_cat = $_POST['fields']['field_52fa1b9ca797b'];
-    
+
     $post = array(
         'post_status'  => 'draft' ,
         'post_title'  =>  $_POST['acf']['field_52a056c4133f9'],
         'post_content'  =>  $_POST['acf']['field_52a056e0133fa'],
         'tags_input'	=> array($resource_type, $resource_cat),
         'post_type'  => 'resource' ,
-    );  
+    );
     // insert the post
-    $post_id = wp_insert_post( $post ); 
+    $post_id = wp_insert_post( $post );
     // update $_POST['return']
-    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] ); 
+    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
     // return the new ID
     return $post_id;
 }
 add_filter('acf/pre_save_post' , 'my_pre_save_post' );
 
 add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
- 
+
 function my_deregister_styles() {
 	wp_deregister_style( 'wp-admin' );
 }
@@ -209,9 +209,9 @@ function my_deregister_styles() {
 /* Is Tree */
 function is_tree($pid) {      // $pid = The ID of the page we're looking for pages underneath
 	global $post;         // load details about this page
-	if(is_page()&&($post->post_parent==$pid||is_page($pid))) 
+	if(is_page()&&($post->post_parent==$pid||is_page($pid)))
                return true;   // we're at the page or at a sub page
-	else 
+	else
                return false;  // we're elsewhere
 };
 
@@ -225,14 +225,14 @@ function the_breadcrumb() {
           if ( is_tree(164) ) {
           		echo '<a href="/events/" title="">Events</a>';
                 if ( is_page('categories') ) {
-                	echo " &#47; "; echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>'; 
-                } else { 
-                	echo " &#47; "; echo '<a href="/events/categories/">Categories</a>'; echo " &#47; "; echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>'; 
+                	echo " &#47; "; echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
+                } else {
+                	echo " &#47; "; echo '<a href="/events/categories/">Categories</a>'; echo " &#47; "; echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
                 }
             } elseif ( is_singular('resource') ) {
-            	
-				custom_breadcrumbs(); 
-				
+
+				custom_breadcrumbs();
+
             } elseif ( bp_is_member() ) {
           		echo '<a href="/members/" title="">Members</a>';
                 echo " &#47; ";
@@ -242,7 +242,7 @@ function the_breadcrumb() {
                 echo " &#47; ";
                 echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
         	} elseif (is_subpage()) {
-        		global $post; 
+        		global $post;
         		$parent_title = get_the_title($post->post_parent);
         		$parent_link = get_permalink($post->post_parent);
                	echo '<a href="'. $parent_link .'">'.$parent_title.'</a>';
@@ -309,7 +309,7 @@ function display_latest_tweets($no_tweets){
                'count'           => $no_tweets,           // Number of Tweets to display
                'exclude_replies' => true
             )
-          );    
+          );
           if($twitterData && is_array($twitterData)) {
           ?>
             <div id="tweets_list">
@@ -341,10 +341,10 @@ function display_latest_tweets($no_tweets){
 class widget_subscribe extends WP_Widget {
     // Create Widget
     function widget_subscribe() {
-        parent::WP_Widget(false, $name = 'Huddle - Subscribe', array('description' => 'Newsletter subscribtion box.'));
+        parent::__construct(false, $name = 'Huddle - Subscribe', array('description' => 'Newsletter subscribtion box.'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_subscribe">
@@ -353,7 +353,7 @@ class widget_subscribe extends WP_Widget {
 					<p>Subscribe to our newsletter by submitting your email address below</p>
 					<div class="subscribe_wrapper"><?php echo do_shortcode('[gravityform id="1" title="false" description="false"]'); ?></div>
 				</div>
-				        	
+
            	</li>
         <?php
      }
@@ -364,10 +364,10 @@ register_widget('widget_subscribe');
 class widget_twitter extends WP_Widget {
     // Create Widget
     function widget_twitter() {
-        parent::WP_Widget(false, $name = 'TestHuddle - Twitter', array('description' => 'Twitter Feed for Huddle'));
+        parent::__construct(false, $name = 'TestHuddle - Twitter', array('description' => 'Twitter Feed for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_twitter">
@@ -383,10 +383,10 @@ class widget_twitter extends WP_Widget {
 class widget_events extends WP_Widget {
     // Create Widget
     function widget_events() {
-        parent::WP_Widget(false, $name = 'Huddle - Events - Calendar', array('description' => 'Events calendar for Huddle'));
+        parent::__construct(false, $name = 'Huddle - Events - Calendar', array('description' => 'Events calendar for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_events">
@@ -402,10 +402,10 @@ register_widget('widget_events');
 class widget_events_upcoming extends WP_Widget {
     // Create Widget
     function widget_events_upcoming() {
-        parent::WP_Widget(false, $name = 'Huddle - Events - Upcoming', array('description' => 'Upcoming events list for Huddle'));
+        parent::__construct(false, $name = 'Huddle - Events - Upcoming', array('description' => 'Upcoming events list for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_events_upcoming  <?php if (is_page('events') OR is_singular('event')) { echo 'hide_events'; }?>">
@@ -432,10 +432,10 @@ register_widget('widget_events_upcoming');
 class widget_blog extends WP_Widget {
     // Create Widget
     function widget_blog() {
-        parent::WP_Widget(false, $name = 'Huddle - Blog', array('description' => 'Newest blog posts for Huddle'));
+        parent::__construct(false, $name = 'Huddle - Blog', array('description' => 'Newest blog posts for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_blog  <?php if (is_page(array('blog', 'most-recent', 'most-views', 'most-comments')) OR is_singular('post')) { echo 'hide_posts'; }?>">
@@ -443,10 +443,10 @@ class widget_blog extends WP_Widget {
 				<ul id="widget_blog_list">
 					<?php $the_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => '2', 'order' => 'DESC')); while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						<li>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>	
+							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>
 							<p class="widget_blog_list_exc"><?php the_excerpt(); ?></p>
 							<p class="widget_blog_list_time"><?php the_time('d/m/Y'); ?></p>
-						</li>				
+						</li>
 					<?php endwhile; ?>
 					<?php wp_reset_postdata(); ?>
 				</ul>
@@ -460,10 +460,10 @@ register_widget('widget_blog');
 class widget_comments extends WP_Widget {
     // Create Widget
     function widget_comments() {
-        parent::WP_Widget(false, $name = 'Huddle - Comments', array('description' => 'Most recent comments for Huddle'));
+        parent::__construct(false, $name = 'Huddle - Comments', array('description' => 'Most recent comments for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_comments">
@@ -486,10 +486,10 @@ register_widget('widget_comments');
 class widget_blog_archive extends WP_Widget {
     // Create Widget
     function widget_blog_archive() {
-        parent::WP_Widget(false, $name = 'Huddle - Blog - Archive', array('description' => 'Blog posts archive for Huddle'));
+        parent::__construct(false, $name = 'Huddle - Blog - Archive', array('description' => 'Blog posts archive for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_blog_archive">
@@ -504,10 +504,10 @@ register_widget('widget_blog_archive');
 class widget_blog_cat extends WP_Widget {
     // Create Widget
     function widget_blog_cat() {
-        parent::WP_Widget(false, $name = 'Huddle - Blog - Categories', array('description' => 'Blog posts categories for Huddle'));
+        parent::__construct(false, $name = 'Huddle - Blog - Categories', array('description' => 'Blog posts categories for Huddle'));
     }
     // Widget Content
-    function widget($args, $instance) { 
+    function widget($args, $instance) {
         extract( $args );
         ?>
            	<li class="widget widget_blog_cat">
@@ -575,7 +575,7 @@ function codex_custom_init() {
   );
   register_post_type('slider',$args);
   flush_rewrite_rules();
-  
+
   $labels = array(
     'name' => _x('Resources', 'post type general name'),
     'singular_name' => _x('Resource', 'post type singular name'),
@@ -627,7 +627,7 @@ $labels = array(
         'add_new_item' => __( 'Add New Resources Type' ),
         'new_item_name' => __( 'New Resources Type Name' )
 );
- 
+
 $settings = array(
         'hierarchical' => true,
         'capability_type' => 'resource_type',
@@ -643,20 +643,20 @@ register_taxonomy('resource_type', array('resource'), $settings);
 function add_resource_caps() {
 $role = get_role( 'administrator' );
 
-$role->add_cap( 'edit_resource' ); 
-$role->add_cap( 'edit_resources' ); 
+$role->add_cap( 'edit_resource' );
+$role->add_cap( 'edit_resources' );
 $role->add_cap( 'edit_others_resources' );
-$role->add_cap( 'delete_others_resources' ); 
+$role->add_cap( 'delete_others_resources' );
 $role->add_cap( 'delete_published_resources' );
-$role->add_cap( 'publish_resources' ); 
-$role->add_cap( 'read_resource' ); 
-$role->add_cap( 'read_private_resources' ); 
-$role->add_cap( 'delete_private_resources' ); 
+$role->add_cap( 'publish_resources' );
+$role->add_cap( 'read_resource' );
+$role->add_cap( 'read_private_resources' );
+$role->add_cap( 'delete_private_resources' );
 $role->add_cap( 'delete_resource' );
 $role->add_cap( 'delete_resources' );
-$role->add_cap( 'manage_resource_types' ); 
-$role->add_cap( 'delete_resource_types' ); 
-$role->add_cap( 'edit_resource_types' ); 
+$role->add_cap( 'manage_resource_types' );
+$role->add_cap( 'delete_resource_types' );
+$role->add_cap( 'edit_resource_types' );
 }
 add_action( 'admin_init', 'add_resource_caps');
 
@@ -664,7 +664,7 @@ add_action( 'admin_init', 'add_resource_caps');
 add_filter( 'posts_where', 'devplus_attachments_wpquery_where' );
 function devplus_attachments_wpquery_where( $where ){
 	global $current_user;
-	
+
 	if( is_user_logged_in() ){
 		if ($current_user->user_level != 10 ) {
 			// we spreken over een ingelogde user
@@ -815,7 +815,7 @@ endif;
 add_filter( 'excerpt_length', 'boilerplate_excerpt_length' );
 
 if ( ! function_exists( 'boilerplate_continue_reading_link' ) ) :
-	
+
 	function boilerplate_continue_reading_link() {
 		return ' <a href="'. get_permalink() . '">' . __( '', 'boilerplate' ) . '</a>';
 	}
@@ -969,7 +969,7 @@ add_action( 'widgets_init', 'boilerplate_remove_recent_comments_style' );
 if ( ! function_exists( 'boilerplate_posted_on' ) ) :
 
 	function boilerplate_posted_on() {
-	
+
 		printf( __( '<span class="%1$s">Posted on</span> <span class="entry-date">%2$s %3$s %4$s</span> <span class="meta-sep">by</span> %5$s', 'boilerplate' ),
 			// %1$s = container class
 			'meta-prep meta-prep-author',
@@ -1110,10 +1110,10 @@ function wpbeginner_numeric_posts_nav() {
 }
 
 /*
- * 
+ *
  * Hide Ebook Downloads
- * 
- * 
+ *
+ *
  * */
 add_filter('pre_get_posts', function( $query ) {
     if (!$query->is_admin && $query->is_search && $query->is_main_query() ) {
@@ -1126,10 +1126,10 @@ add_filter('pre_get_posts', function( $query ) {
 
 
 /*
- * 
+ *
  * Gravity Forms
  * Remove labels
- * 
+ *
  * */
 
  add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
@@ -1150,8 +1150,8 @@ function custom_breadcrumbs() {
        $open_url='<a title="Resources" href="https://'.$_SERVER['HTTP_HOST'];
 	   $close_url = '">';
 	   $end_url = '</a>';
-	   $crumbs = explode("/",$_SERVER["REQUEST_URI"]);   
-	   
+	   $crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+
 	   //URL SECTION
 	   echo $open_url . "/" .$crumbs[1] . "/"  . $close_url;
 	   //Rescource
@@ -1163,8 +1163,8 @@ function custom_breadcrumbs() {
 	   //URL SECTION
 	   echo $open_url . "/" .$crumbs[1] . "/" . $crumbs[2] ."/" . $crumbs[3] . "/" . $close_url;
 		//Title
-		echo    $crumbs[3] . $end_url;			
-      
+		echo    $crumbs[3] . $end_url;
+
 }
 
 /* Exclude One Taxonomy From Yoast SEO Sitemap */
@@ -1174,8 +1174,8 @@ if ( $taxonomy == 'resource_type' || 'resource_type-sitemap' ) return true;
 add_filter( 'wpseo_sitemap_exclude_taxonomy', 'sitemap_exclude_taxonomy', 10, 2 );
 
 // Display User IP in WordPress
- 
- 
+
+
 function ip_info($ip = NULL, $purpose = "location", $deep_detect = TRUE) {
     $output = NULL;
     if (filter_var($ip, FILTER_VALIDATE_IP) === FALSE) {
